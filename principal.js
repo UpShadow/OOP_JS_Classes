@@ -38,4 +38,8 @@ console.log(pf.Nome + " tem um total de R$"+ imposto + " de imposto.");
 console.log("-------------------------------");
 
 //Exemplo Grupo de Contribuintes
-let GrupoContribuintes = new GrupoDeContribuintes();
+let GC = new GrupoDeContribuintes();
+GC.inserirContribuintes(c);
+GC.inserirContribuintes(pj);
+GC.inserirContribuintes(pf);
+console.log(GC.c.Nome);

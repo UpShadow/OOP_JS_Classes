@@ -1,13 +1,15 @@
+import Contribuinte from "./Contribuinte";
+
 export default class GrupoDeContribuintes {
     constructor() {
-        this.contribuintes = new Array();
+        this.grupoDeContribuintes = new Array();
     }
 
-    //get Carga() { return this.carga; }
-    //set Carga(value) { this.carga = value; }
+    get GrupoDeContribuintes() { return this.grupoDeContribuintes; }
+    set GrupoDeContribuintes(value) { this.grupoDeContribuintes = value; }
 
     inserirContribuintes() {
-
+        this.GrupoDeContribuintes.push(Contribuinte);      
     }
 
     qtdTotalImposto() {

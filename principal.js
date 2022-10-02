@@ -13,8 +13,8 @@ console.log("Documento: " + c.Documento);
 console.log("Renda Bruta: " + c.RendaBruta);
 console.log("-------------------------------");
 
-//Exemplo Pessoa Jurídica
-let pj = new PessoaJuridica("Eduardo", "666", 5000, "1989");
+//Exemplo Pessoa Jurídicapj
+let pj = new PessoaJuridica("Eduardo", "700", 5000, "1989");
 imposto = pj.calcularImposto(pj.RendaBruta);
 
 console.log("Pessoa Jurídica: ")
@@ -42,4 +42,35 @@ let GC = new GrupoDeContribuintes();
 GC.inserirContribuintes(c);
 GC.inserirContribuintes(pj);
 GC.inserirContribuintes(pf);
-console.log(GC.c.pj);
+
+console.log("Exibindo os arrays presentes no grupo de contribuintes:")
+let contribuintes = GC.GrupoDeContribuintes;
+ for (let i of GC.GrupoDeContribuintes)
+     console.log(i);
+// console.log(GC.GrupoDeContribuintes[0]);
+// console.log(GC.GrupoDeContribuintes[1]);
+// console.log(GC.GrupoDeContribuintes[2]);
+console.log("-------------------------------");
+
+let porcentagemMulheres = GC.PorcentagemSexoFeminino();
+console.log("Porcentagem de mulheres é: " + porcentagemMulheres + "%"); //nesse console.log tem apenas uma mulher cadastrada então da 100% 
+console.log("-------------------------------");
+//Cadastrando mais pessoas fisicas para fazer o calculo da porcentagem
+let pf1 = new PessoaFisica("André", "1024", 8500, "masculino");
+let pf2 = new PessoaFisica("Vitor", "5321", 7800, "masculino");
+let pf3 = new PessoaFisica("Vitoria", "786", 12000, "feminino");
+let pf4 = new PessoaFisica("Gabrielly", "395", 17290, "feminino");
+GC.inserirContribuintes(pf1);
+GC.inserirContribuintes(pf2);
+GC.inserirContribuintes(pf3);
+GC.inserirContribuintes(pf4);
+
+ console.log("Exibindo os novos arrays no grupo de contribuintes:")
+ for (let i of GC.GrupoDeContribuintes)
+     console.log(i);
+
+console.log("-------------------------------");
+
+// O calculo vai ser ( qtdMulheres = 3 / qtdTotalContribuintes = 5 ) * 100 = 60
+let novaPorcentagemMulheres = GC.PorcentagemSexoFeminino();
+console.log("Nova porcentagem de mulheres é: " + novaPorcentagemMulheres + "%");

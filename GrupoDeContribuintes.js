@@ -1,5 +1,6 @@
 import Contribuinte from "./Contribuinte.js";
 import PessoaFisica from "./PessoaFisica.js";
+import PessoaJuridica from "./PessoaJuridica.js";
 
 export default class GrupoDeContribuintes {
     constructor() {
@@ -9,7 +10,7 @@ export default class GrupoDeContribuintes {
     get GrupoDeContribuintes() { return this.grupoDeContribuintes; }
     set GrupoDeContribuintes(value) { this.grupoDeContribuintes = value; }
 
-    inserirContribuintes() {
+    inserirContribuintes(Contribuinte) {
         this.GrupoDeContribuintes.push(Contribuinte);      
     }
 
@@ -18,7 +19,7 @@ export default class GrupoDeContribuintes {
         let totalImposto = 0;
 
         for(let i of contribuintes) {
-            
+
         }
     }
 
@@ -31,13 +32,13 @@ export default class GrupoDeContribuintes {
             if(i instanceof PessoaFisica)
             {
                 qtdTotalContribuintes++;
-                if(i.Sexo=="F") {
+                if(i.Sexo == "feminino") {
                     qtdMulheres++;
                 }
             }
         }
-
-        let porcentagemMulheres = (qtdMulher / qtdTotalContribuintes) * 100;
+        
+        let porcentagemMulheres = (qtdMulheres/qtdTotalContribuintes)*100;
         return porcentagemMulheres;
     }
 }

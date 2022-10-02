@@ -19,8 +19,14 @@ export default class GrupoDeContribuintes {
         let totalImposto = 0;
 
         for(let i of contribuintes) {
-
+            if(i instanceof PessoaFisica) {
+                totalImposto = i.calcularImposto();
+            } else if(i instanceof PessoaJuridica) {
+                totalImposto = i.calcularImposto();
+            }
         }
+
+        return totalImposto;
     }
 
     PorcentagemSexoFeminino() {

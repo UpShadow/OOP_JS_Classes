@@ -43,17 +43,19 @@ GC.inserirContribuintes(c);
 GC.inserirContribuintes(pj);
 GC.inserirContribuintes(pf);
 
-console.log("Exibindo os arrays presentes no grupo de contribuintes:")
+console.log("Exibindo os arrays do grupo de contribuintes:")
 let contribuintes = GC.GrupoDeContribuintes;
  for (let i of GC.GrupoDeContribuintes)
      console.log(i);
-// console.log(GC.GrupoDeContribuintes[0]);
-// console.log(GC.GrupoDeContribuintes[1]);
-// console.log(GC.GrupoDeContribuintes[2]);
 console.log("-------------------------------");
 
 let porcentagemMulheres = GC.PorcentagemSexoFeminino();
 console.log("Porcentagem de mulheres é: " + porcentagemMulheres + "%"); //nesse console.log tem apenas uma mulher cadastrada então da 100% 
+
+console.log("-------------------------------");
+let TotalImposto = GC.qtdTotalImposto();
+console.log("O Imposto Total das pessoas Físicas e Jurídicas somados é: R$" + TotalImposto );
+
 console.log("-------------------------------");
 //Cadastrando mais pessoas fisicas para fazer o calculo da porcentagem
 let pf1 = new PessoaFisica("André", "1024", 8500, "masculino");
@@ -74,3 +76,7 @@ console.log("-------------------------------");
 // O calculo vai ser ( qtdMulheres = 3 / qtdTotalContribuintes = 5 ) * 100 = 60
 let novaPorcentagemMulheres = GC.PorcentagemSexoFeminino();
 console.log("Nova porcentagem de mulheres é: " + novaPorcentagemMulheres + "%");
+
+console.log("-------------------------------");
+let novoTotalImposto = GC.qtdTotalImposto();
+console.log("O Imposto Total das pessoas Físicas e Jurídicas somados é: R$" + novoTotalImposto );

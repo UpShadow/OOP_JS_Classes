@@ -42,4 +42,4 @@ let GC = new GrupoDeContribuintes();
 GC.inserirContribuintes(c);
 GC.inserirContribuintes(pj);
 GC.inserirContribuintes(pf);
-console.log(GC.c.Nome);
+console.log(GC.c.pj);
